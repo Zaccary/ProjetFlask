@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-5 jeu-container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="video-container">
+                <iframe src="{{jeuCon.video}}&autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="640" height="360"></iframe>
+            </div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column align-items-start">
+            <h2>{{ jeuCon.nom }}</h2>
+            <h4>Prix : {{ jeuCon.prix }} € </h4>
+            <img src="/static/images/{{ jeuCon.icon }}" alt="{{ jeuCon.pegi }}" style="height: 75px; vertical-align: middle;">
+            <button class="btn btn-primary mt-3">Ajouter au panier</button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <p>{{ jeuCon.description }}</p>
+            <h4 id="config">Configurations</h4>
+            <h5 id="configtit1">Configuration minimale :</h5>
+            <ul id="configMin">
+                <li id="ram1">RAM : {{ jeuCon.ram_config1 }} GB</li>
+                <li id="stock1">Stockage : {{ jeuCon.stockage_config1 }} GB</li>
+                <li id="proco1">Processeur : {{ jeuCon.nom_processeur_config1 }}</li>
+                <li id="cg1">Carte Graphique : {{jeuCon.nom_carte_graphique_config1}}</li>
+                <li id="os1">OS : {{ jeuCon.nom_os_config1 }}</li>
+            </ul>
+            <h5 id="configtit2">Configuration recommandée :</h5>
+            <ul id="configRec">
+                <li id="ram2">RAM : {{ jeuCon.ram_config2 }} GB</li>
+                <li id="stock2">Stockage : {{ jeuCon.stockage_config2 }} GB</li>
+                <li id="proco2">Processeur : {{ jeuCon.nom_processeur_config2 }}</li>
+                <li id ="cg2">Carte Graphique : {{jeuCon.nom_carte_graphique_config2}}</li>
+                <li id ="os2">OS : {{ jeuCon.nom_os_config2 }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
