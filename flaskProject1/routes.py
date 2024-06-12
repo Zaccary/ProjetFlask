@@ -3,7 +3,6 @@ from flask import render_template, url_for
 
 @app.route('/')
 @app.route('/accueil')
-
 def accueil():
     jeux = models.Jeux.query.all()
     return render_template('accueil.html', jeux=jeux)
